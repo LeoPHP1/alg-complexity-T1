@@ -1,0 +1,24 @@
+import time
+
+#Função perf_counter() da biblioteca time marca o tempo de inicio 
+# e fim da execução do algoritmo de forma precisa
+
+def bubbleSort(arr):
+    n = len(arr)
+    comparisons = 0
+    swaps = 0
+    start_time = time.perf_counter()
+    
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            comparisons += 1
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swaps += 1
+                swapped = True
+        if not swapped:
+            break
+            
+    end_time = time.perf_counter()
+    return {"time": end_time - start_time, "comparisons": comparisons, "swaps": swaps}

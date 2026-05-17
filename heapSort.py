@@ -1,6 +1,9 @@
 import time
-import sys
-def heap_sort(arr):
+
+#Função perf_counter() da biblioteca time marca o tempo de inicio 
+# e fim da execução do algoritmo de forma precisa
+
+def heapSort(arr):
     comparisons = [0]
     swaps = [0]
 
